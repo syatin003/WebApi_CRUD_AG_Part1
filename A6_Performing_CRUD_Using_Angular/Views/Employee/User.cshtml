@@ -1,0 +1,52 @@
+﻿<html ng-app="crudModule">
+@{
+    //ViewBag.Title = "User";
+    //Layout = null;
+}
+
+
+<head>
+    <title>User</title>
+    <style type="text/css">
+        #tblContainer, #tblcollections, #tblCRUD, td {
+            border: double;
+        }
+
+        th {
+            background-color: darkgray;
+        }
+
+        #dvcollection {
+            height: 500px;
+            overflow-y: scroll;
+        }
+    </style>
+
+</head>
+<h2>Using Angular for performing accessing data from WebApi</h2>
+<body>
+    <div id="dvcollection">
+        <table id="tblcollections" ng-controller="crudController">
+            <thead>
+                <tr>
+                    <th>EmpNo</th>
+                    <th>EmpName</th>
+                    <th>Salary</th>
+                    <th>DeptName</th>
+                    <th>Designation</th>
+                </tr>
+            </thead>
+            <tbody ng-repeat="Emp in Employees">
+                <tr ng-click="get(Emp)">
+                    <td> <span>{{Emp.EmpNo}}</span></td>
+                    <td> <span>{{Emp.EmpName}}</span></td>
+                    <td> <span>{{Emp.Salary}}</span></td>
+                    <td> <span>{{Emp.DeptName}}</span></td>
+                    <td> <span>{{Emp.Designation}}</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
+
